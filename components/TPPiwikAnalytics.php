@@ -166,7 +166,7 @@ class TPPiwikAnalytics extends CApplicationComponent
 })();
 // Piwik Extension provided by TagPla.net
 // https://github.com/TagPlanet/yii-analytics-piwik
-// Copyright 2012, TagPla.net & Philip Lawrence
+// Copyright 2013, TagPla.net & Philip Lawrence
 EOJS;
         // Should we auto add in the analytics tag?
         if($this->autoRender)
