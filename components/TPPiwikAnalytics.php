@@ -8,7 +8,7 @@
  * @link https://github.com/TagPlanet/yii-analytics-piwik
  * @copyright Copyright &copy; 2012 Philip Lawrence
  * @license http://tagpla.net/licenses/MIT.txt
- * @version 1.0.0
+ * @version 1.0.1
  */
 class TPPiwikAnalytics extends CApplicationComponent
 {
@@ -48,46 +48,50 @@ class TPPiwikAnalytics extends CApplicationComponent
     const Q = "'";
 
     /**
-     * Available options, pulled (Oct 16, 2012) from
+     * Available options, pulled (Oct 17, 2012) from
      * http://piwik.org/docs/javascript-tracking/#toc-list-of-all-methods-available-in-the-tracking-api
      * @var array
      */
     protected $_availableOptions = array
     (
+        'addDownloadExtensions',
+        'addEcommerceItem',
+        'deleteCustomVariable',
+        'disableCookies',
+        'discardHashTag',
         'enableLinkTracking',
-        'setRequestMethod',
-        'trackGoal',
-        'trackPageView',
+        'killFrame',
+        'redirectFile',
+        'setCampaignKeywordKey',
+        'setCampaignNameKey',
+        'setConversionAttributionFirstReferrer',
+        'setCookieDomain',
+        'setCookieNamePrefix',
+        'setCookiePath',
+        'setCountPreRendered',
+        'setCustomUrl',
+        'setCustomVariable',
+        'setDoNotTrack',
         'setDocumentTitle',
         'setDomains',
-        'setCustomUrl',
-        'setReferrerUrl',
-        'setSiteId',
-        'setTrackerUrl',
         'setDownloadClasses',
         'setDownloadExtensions',
-        'addDownloadExtensions',
+        'setHeartBeatTimer',
         'setIgnoreClasses',
         'setLinkClasses',
         'setLinkTrackingTimer',
-        'setCountPreRendered',
-        'discardHashTag',
-        'setCustomVariable',
-        'deleteCustomVariable',
-        'setCampaignNameKey',
-        'setCampaignKeywordKey',
-        'setConversionAttributionFirstReferrer',
-        'setDoNotTrack',
-        'disableCookies',
-        'killFrame',
-        'redirectFile',
-        'setHeartBeatTimer',
-        'setCookieNamePrefix',
-        'setCookieDomain',
-        'setCookiePath',
-        'setVisitorCookieTimeout',
-        'setSessionCookieTimeout',
         'setReferralCookieTimeout',
+        'setReferrerUrl',
+        'setRequestMethod',
+        'setSessionCookieTimeout',
+        'setSiteId',
+        'setTrackerUrl',
+        'setVisitorCookieTimeout',
+        'trackEcommerceOrder',
+        'trackEcommerceCartUpdate',
+        'trackGoal',
+        'trackPageView',
+        'trackSiteSearch',
     );
 
     /**
