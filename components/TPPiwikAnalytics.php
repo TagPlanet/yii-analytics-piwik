@@ -8,7 +8,7 @@
  * @link https://github.com/TagPlanet/yii-analytics-piwik
  * @copyright Copyright &copy; 2012 Philip Lawrence
  * @license http://tagpla.net/licenses/MIT.txt
- * @version 1.0.1
+ * @version 1.0.2
  */
 class TPPiwikAnalytics extends CApplicationComponent
 {
@@ -119,7 +119,8 @@ class TPPiwikAnalytics extends CApplicationComponent
             throw new CException('Missing required parameter "Tracker URL" for TPPiwikAnalytics');
         
         $this->setSiteId($this->siteID);
-        $this->setTrackerUrl($this->trackerURL);
+        $this->trackerURL = rtrim($this->trackerURL, '/');
+        $this->setTrackerUrl($this->trackerURL . '/piwik.php');
     }
 
     /**
@@ -161,7 +162,7 @@ class TPPiwikAnalytics extends CApplicationComponent
         $js.= <<<EOJS
   // Call the file
   var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-  g.type='text/javascript'; g.defer=true; g.async=true; g.src='{$this->trackerURL}';
+  g.type='text/javascript'; g.defer=true; g.async=true; g.src='{$this->trackerURL}/piwik.js';
   s.parentNode.insertBefore(g,s); 
 })();
 // Piwik Extension provided by TagPla.net
